@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="shadow col-14 mx-auto p-5">
+       <form action="" method="POST" enctype="multipart/form-data">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Image</th>
+                        <th>Join at</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in emp %}
+                    <tr>
+                        <th>{{i.id}}</th>
+                        <th>{{i.name}}</th>
+                        <th>{{i.email}}</th>
+                        <th>{{i.address}}</th>
+                        <th>
+                            <img src="{{i.profileimg}}" alt="avatar">
+                        </th>
+                        <th>{{i.createat}}</th>
+                        <th>
+                            <div class="d-flex gap-2">
+                                <a href="" class="btn btn-success btn-sm">Edit</a>
+                                <a href="" class="btn btn-danger btn-sm">Delete</a>
+                            </div>
+                        </th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+       </form>
+    </div>
+</div>
+{% endblock content %}
